@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "V1E6WKt2hY7xf1+ZjY36z15ssRKZDBY1XUNSVLSxzXWhKy3fgEijl1ld7tIXoBZpVMW3Avs4B4ds3vGvS6+4rw==",
+  "success": true,
+  "projectFilePath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.API\\GRA.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\William\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

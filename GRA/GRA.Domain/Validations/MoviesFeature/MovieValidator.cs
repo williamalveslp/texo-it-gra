@@ -34,8 +34,8 @@ namespace GRA.Domain.Validations.MoviesFeature
 
             RuleFor(x => x.Title)
               .MinimumLength(2)
-              .MaximumLength(50)
-              .WithMessage("Campo de \"Título\" deve conter no mínimo 2 e no máximo 50 caracteres.")
+              .MaximumLength(80)
+              .WithMessage("Campo de \"Título\" deve conter no mínimo 2 e no máximo 80 caracteres.")
               .WithSeverity(Severity.Error)
               .WithErrorCode($"{PREFIX_CODE}003");
         }
@@ -51,8 +51,8 @@ namespace GRA.Domain.Validations.MoviesFeature
 
             RuleFor(x => x.Studio)
               .MinimumLength(2)
-              .MaximumLength(50)
-              .WithMessage("Campo de \"Studio\" deve conter no mínimo 2 e no máximo 50 caracteres.")
+              .MaximumLength(80)
+              .WithMessage("Campo de \"Studio\" deve conter no mínimo 2 e no máximo 80 caracteres.")
               .WithSeverity(Severity.Error)
               .WithErrorCode($"{PREFIX_CODE}005");
         }
@@ -68,8 +68,8 @@ namespace GRA.Domain.Validations.MoviesFeature
 
             RuleFor(x => x.Producer)
               .MinimumLength(2)
-              .MaximumLength(50)
-              .WithMessage("Campo de \"Produtor\" deve conter no mínimo 2 e no máximo 50 caracteres.")
+              .MaximumLength(300)
+              .WithMessage("Campo de \"Produtor\" deve conter no mínimo 2 e no máximo 300 caracteres.")
               .WithSeverity(Severity.Error)
               .WithErrorCode($"{PREFIX_CODE}007");
         }
@@ -77,12 +77,19 @@ namespace GRA.Domain.Validations.MoviesFeature
         protected void ValidateYear()
         {
             const int yearOfFirstMovieLaunched = 1864;
+            int yearInsaneForMovieToBeLaunched = DateTime.Now.Year + 100;
 
             RuleFor(x => x.Year)
               .GreaterThan(yearOfFirstMovieLaunched)                               
               .WithMessage($"Campo \"ano\" está inválido. O ano deve ser maior que {yearOfFirstMovieLaunched}.")
               .WithSeverity(Severity.Error)
               .WithErrorCode($"{PREFIX_CODE}008");
+
+            RuleFor(x => x.Year)
+              .LessThan(yearInsaneForMovieToBeLaunched)
+              .WithMessage($"Campo \"ano\" de lançamento está muito fora das expectativas.")
+              .WithSeverity(Severity.Error)
+              .WithErrorCode($"{PREFIX_CODE}009");
         }
     }
 }

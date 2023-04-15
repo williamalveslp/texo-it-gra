@@ -9,5 +9,7 @@
         public string? Producer { get; set; }
 
         public int Year { get; set; }
+
+        public bool? IsWinner { get; set; }
     }
 }

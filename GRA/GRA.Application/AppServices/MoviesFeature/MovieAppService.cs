@@ -38,7 +38,7 @@ namespace GRA.Application.AppServices.MoviesFeature
                 return await Task.FromResult<int?>(null);
             }
 
-            Movie movie = new Movie(command?.Title, command?.Studio, command?.Producer, command?.Year ?? 0);
+            Movie movie = new Movie(command?.Title, command?.Studio, command?.Producer, command?.Year ?? 0, command?.IsWinner);
             movie = await _movieRepositoryWrite.InsertSaveAsync(movie);
 
             return movie.Id;

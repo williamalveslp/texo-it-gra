@@ -15,6 +15,7 @@ namespace GRA.Application.AutoMapper.MoviesFeature
                 .ForPath(dest => dest.Producer, opt => opt.MapFrom(src => src.Producer))
                 .ForPath(dest => dest.Studio, opt => opt.MapFrom(src => src.Studio))
                 .ForPath(dest => dest.Year, opt => opt.MapFrom(src => src.Year))
+                .ForPath(dest => dest.IsWinner, opt => opt.MapFrom(src => src.IsWinner))
                 .ReverseMap();
         }
     }

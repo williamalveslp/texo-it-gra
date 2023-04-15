@@ -21,5 +21,15 @@
             this.Year = year;
             this.IsWinner = isWinner;
         }
+
+        public void Update(string? title, string? studio, string? producer, int year, bool? isWinner)
+        {
+            this.Title = title?.Trim() ?? throw new ArgumentNullException(title);
+            this.Studio = studio?.Trim() ?? throw new ArgumentNullException(studio);
+            this.Producer = producer?.Trim() ?? throw new ArgumentNullException(producer);
+            this.Year = year;
+            this.IsWinner = isWinner;
+            RefreshUpdatedDate();
+        }
     }
 }

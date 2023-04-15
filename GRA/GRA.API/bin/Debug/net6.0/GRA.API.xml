@@ -40,6 +40,13 @@
             <param name="viewModel"></param>
             <returns></returns>
         </member>
+        <member name="M:GRA.API.Controllers.MovieController.Put(GRA.Application.ViewModels.MoviesFeature.UpdateMovieViewModel)">
+            <summary>
+            Atualizar Filme.
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
         <member name="M:GRA.API.Controllers.MovieController.GetAll">
             <summary>
             Lista todos os Filmes.

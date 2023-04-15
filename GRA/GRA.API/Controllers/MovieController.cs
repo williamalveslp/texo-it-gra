@@ -47,6 +47,24 @@ namespace GRA.API.Controllers
             return Response(await _movieAppService.InsertAsync(viewModel));
         }
 
+
+        /// <summary>
+        /// Atualizar Filme.
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [ProducesResponseType(typeof(Response200ConfirmationViewModel<int?>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response400ClientErrorViewModel<IEnumerable<string>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Response500ServerErrorViewModel<IEnumerable<string>>), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> Put([FromBody] UpdateMovieViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return ResponseModelStateInvalid();
+
+            return Response(await _movieAppService.UpdateAsync(viewModel));
+        }
+
         /// <summary>
         /// Lista todos os Filmes.
         /// </summary>

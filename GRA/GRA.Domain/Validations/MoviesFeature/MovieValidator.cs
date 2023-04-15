@@ -14,7 +14,7 @@ namespace GRA.Domain.Validations.MoviesFeature
             this._movieRepositoryReadOnly = movieRepositoryReadOnly;
         }
 
-        protected void ValidateFlowId()
+        protected void ValidateId()
         {
             RuleFor(x => x.Id)
               .NotEmpty()

@@ -44,6 +44,30 @@ namespace GRA.Application.AppServices.MoviesFeature
             return movie.Id;
         }
 
+        public async Task<int?> UpdateAsync(UpdateMovieViewModel viewModel)
+        {
+            var command = _mapper.Map<UpdateMovieViewModel, UpdateMovieCommand>(viewModel);
+
+            if (!command.Validator(_movieRepositoryReadOnly).IsValid)
+            {
+                NotifyValidationErrors(command.ValidatorFailures, HttpStatusCode.BadRequest);
+                return await Task.FromResult<int?>(null);
+            }
+
+            var movie = _movieRepositoryReadOnly.GetById(command.Id);
+
+            if (movie == null)
+            {
+                NotifyValidationErrors("Filme não foi encontrado para ser atualizado.", HttpStatusCode.BadRequest);
+                return await Task.FromResult<int?>(null);
+            }
+
+            movie.Update(command.Title, command.Studio, command.Producer, command.Year, command.IsWinner);
+            movie = await _movieRepositoryWrite.UpdateSaveAsync(movie);
+
+            return movie.Id;
+        }
+
         public async Task<IList<MovieViewModel>> GetAllAsync()
         {
             var movies = await _movieRepositoryReadOnly.GetAllAsync();

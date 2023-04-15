@@ -18,6 +18,15 @@ namespace GRA.Application.AutoMapper.MoviesFeature
                 .ForPath(dest => dest.IsWinner, opt => opt.MapFrom(src => src.IsWinner))
                 .ReverseMap();
 
+            CreateMap<UpdateMovieViewModel, UpdateMovieCommand>(MemberList.None)
+                .ForPath(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForPath(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
+                .ForPath(dest => dest.Producer, opt => opt.MapFrom(src => src.Producer))
+                .ForPath(dest => dest.Studio, opt => opt.MapFrom(src => src.Studio))
+                .ForPath(dest => dest.Year, opt => opt.MapFrom(src => src.Year))
+                .ForPath(dest => dest.IsWinner, opt => opt.MapFrom(src => src.IsWinner))
+                .ReverseMap();
+
             CreateMap<Domain.Entities.MovieFeature.Movie, MovieViewModel>(MemberList.None)
                 .ForPath(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
                 .ForPath(dest => dest.Producer, opt => opt.MapFrom(src => src.Producer))

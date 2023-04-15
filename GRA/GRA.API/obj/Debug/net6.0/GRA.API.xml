@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GRA.API</name>
+    </assembly>
+    <members>
+        <member name="T:GRA.API.Controllers.Base.ApiBaseController">
+            <summary>
+            Controller base.
+            </summary>
+        </member>
+        <member name="F:GRA.API.Controllers.Base.ApiBaseController._notifications">
+            <summary>
+            Notifications.
+            </summary>
+        </member>
+        <member name="M:GRA.API.Controllers.Base.ApiBaseController.#ctor(MediatR.INotificationHandler{GRA.Domain.Core.Requests.DomainNotificationRequest})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="notifications"></param>
+        </member>
+        <member name="T:GRA.API.Controllers.MovieController">
+            <summary>
+            API de Filmes.
+            </summary>
+        </member>
+        <member name="M:GRA.API.Controllers.MovieController.#ctor(GRA.Application.AppInterfaces.MoviesFeature.IMovieAppService,MediatR.INotificationHandler{GRA.Domain.Core.Requests.DomainNotificationRequest},Microsoft.Extensions.Logging.ILogger{GRA.API.Controllers.MovieController})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="movieAppService"></param>
+            <param name="notifications"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:GRA.API.Controllers.MovieController.Post(GRA.Application.ViewModels.MoviesFeature.RegisterMovieViewModel)">
+            <summary>
+            Cadastrar Filme.
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GRA.API.Controllers.MovieController.GetAll">
+            <summary>
+            Lista todos os Filmes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GRA.API.IoC.Register">
+            <summary>
+            Register general layers.
+            </summary>
+            <summary>
+            Register the Handlers.
+            </summary>
+        </member>
+        <member name="M:GRA.API.IoC.Register.AddAppServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add the register to AppServices.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:GRA.API.IoC.Register.RegisterGeneralLayers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register general layers.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:GRA.API.IoC.Register.AddHandlers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add the register to Handlers.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:GRA.API.Middlewares.ExceptionMiddlewareExtension">
+            <summary>
+            Exception Handling.
+            </summary>
+        </member>
+        <member name="M:GRA.API.Middlewares.ExceptionMiddlewareExtension.UseGlobalExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configure the Exception Handler.
+            </summary>
+            <param name="app"></param>
+        </member>
+    </members>
+</doc>

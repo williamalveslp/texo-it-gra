@@ -1,0 +1,17 @@
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.csproj.AssemblyReference.cache
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.AssemblyInfoInputs.cache
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.AssemblyInfo.cs
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.csproj.CoreCompileInputs.cache
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Application.deps.json
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Application.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Application.pdb
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\refint\GRA.Application.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.pdb
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\ref\GRA.Application.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.Core.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.pdb
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.Core.pdb
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.csproj.CopyComplete

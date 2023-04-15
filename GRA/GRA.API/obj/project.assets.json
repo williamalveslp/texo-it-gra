@@ -465,7 +465,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "GRA.Domain": "1.0.0"
+          "GRA.Domain": "1.0.0",
+          "GRA.Infra.CrossCutting": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GRA.Application.dll": {}
@@ -501,6 +502,16 @@
         },
         "runtime": {
           "bin/placeholder/GRA.Domain.Core.dll": {}
+        }
+      },
+      "GRA.Infra.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GRA.Infra.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GRA.Infra.CrossCutting.dll": {}
         }
       },
       "GRA.Infra.DataStore.EntityFrameworkCore/1.0.0": {
@@ -1198,6 +1209,11 @@
       "type": "project",
       "path": "../GRA.Domain.Core/GRA.Domain.Core.csproj",
       "msbuildProject": "../GRA.Domain.Core/GRA.Domain.Core.csproj"
+    },
+    "GRA.Infra.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../GRA.Infra.CrossCutting/GRA.Infra.CrossCutting.csproj",
+      "msbuildProject": "../GRA.Infra.CrossCutting/GRA.Infra.CrossCutting.csproj"
     },
     "GRA.Infra.DataStore.EntityFrameworkCore/1.0.0": {
       "type": "project",

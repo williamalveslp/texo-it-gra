@@ -83,3 +83,5 @@ C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\FluentValidation.dll
 C:\Projetos_Github\texo-it-gra\GRA\GRA.API\obj\Debug\net6.0\GRA.API.xml
 C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\AutoMapper.dll
 C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\GRA.Infra.CrossCutting.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\GRA.Infra.CrossCutting.pdb

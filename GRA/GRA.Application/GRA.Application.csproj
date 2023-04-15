@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GRA.Domain\GRA.Domain.csproj" />
+    <ProjectReference Include="..\GRA.Infra.CrossCutting\GRA.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

@@ -41,6 +41,14 @@ namespace GRA.Infra.DataStore.EntityFrameworkCore.Repositories.Base
             return entity;
         }
 
+        public async Task<IEnumerable<T>> InsertSaveInLoteAsync(IEnumerable<T> entities)
+        {
+            await _context.Set<T>().AddRangeAsync(entities);
+            SaveChanges();
+
+            return entities;
+        }
+
         public T UpdateSave(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;

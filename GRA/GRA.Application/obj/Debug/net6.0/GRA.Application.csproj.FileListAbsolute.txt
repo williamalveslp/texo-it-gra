@@ -15,3 +15,5 @@ C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.d
 C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.pdb
 C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Domain.Core.pdb
 C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\obj\Debug\net6.0\GRA.Application.csproj.CopyComplete
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Infra.CrossCutting.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Application\bin\Debug\net6.0\GRA.Infra.CrossCutting.pdb

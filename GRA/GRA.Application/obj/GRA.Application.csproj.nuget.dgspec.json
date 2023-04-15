@@ -33,6 +33,9 @@
             "projectReferences": {
               "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj": {
                 "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj"
+              },
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj"
               }
             }
           }
@@ -192,6 +195,64 @@
               "version": "[13.0.3, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj",
+        "projectName": "GRA.Infra.CrossCutting",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

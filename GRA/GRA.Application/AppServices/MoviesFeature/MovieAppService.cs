@@ -6,13 +6,16 @@ using GRA.Domain.Commands.MoviesFeature;
 using GRA.Domain.Entities.MovieFeature;
 using GRA.Domain.Interfaces.Repositories.ReadOnly;
 using GRA.Domain.Interfaces.Repositories.Write;
+using GRA.Infra.CrossCutting.Helpers;
 using MediatR;
+using System.Data;
 using System.Net;
+using static GRA.Infra.CrossCutting.Helpers.CsvHelper;
 
 namespace GRA.Application.AppServices.MoviesFeature
 {
     ///<inheritdoc cref="IMovieAppService"/>
-    public class MovieAppService: CommandHandler, IMovieAppService
+    public class MovieAppService : CommandHandler, IMovieAppService
     {
         private readonly IMovieRepositoryReadOnly _movieRepositoryReadOnly;
         private readonly IMovieRepositoryWrite _movieRepositoryWrite;
@@ -72,6 +75,42 @@ namespace GRA.Application.AppServices.MoviesFeature
         {
             var movies = await _movieRepositoryReadOnly.GetAllAsync();
             return _mapper.Map<IList<Movie>, IList<MovieViewModel>>(movies);
+        }
+
+        public async Task<CsvHelperResponse?> ImportFromCsv(string csvFilePath)
+        {
+            CsvHelperResponse? csvExtracted = CsvHelper.GetDataFromCsvFile(csvFilePath);
+
+            if (csvExtracted == null || csvExtracted?.DataTable?.Rows == null)
+                return csvExtracted;
+
+            IList<Movie> movies = new List<Movie>(capacity: csvExtracted.DataTable.Rows.Count);
+            IEnumerable<DataRow> enumerableDataRows = csvExtracted.DataTable.Rows.Cast<DataRow>();
+
+            Parallel.ForEach(enumerableDataRows, row =>
+            {
+                int year = int.Parse($"{row.ItemArray[0]}");
+                string title = $"{row.ItemArray[1]}";
+                string studios = $"{row.ItemArray[2]}";
+                string producers = $"{row.ItemArray[3]}";
+
+                string? isWinnerValue = $"{row.ItemArray[3]}";
+                bool? isWinner;
+
+                if (string.IsNullOrEmpty(isWinnerValue))
+                    isWinner = null;
+                else if (isWinnerValue.Equals("yes", StringComparison.OrdinalIgnoreCase))
+                    isWinner = true;
+                else
+                    isWinner = false;
+
+                Movie movie = new Movie(title, studios, producers, year, isWinner);
+                movies.Add(movie);
+            });
+
+            await _movieRepositoryWrite.InsertSaveInLoteAsync(movies);
+
+            return csvExtracted;
         }
 
         public bool DeleteById(int id)

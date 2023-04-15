@@ -1,5 +1,6 @@
 using GRA.API.IoC;
 using GRA.API.Middlewares;
+using GRA.Application.AppInterfaces.MoviesFeature;
 using GRA.Application.AutoMapper.MoviesFeature;
 using GRA.Infra.DataStore.EntityFrameworkCore.Startup;
 
@@ -51,6 +52,9 @@ try
 
     app.MapControllers();
 
+    // Import Movies.
+    await ImportMoviesFromCsvToMemory(builder, app);
+
     app.Run();
 }
 catch (Exception ex)
@@ -60,4 +64,22 @@ catch (Exception ex)
 finally
 {
     Console.WriteLine("Server Shutting down...");
+}
+
+static async Task ImportMoviesFromCsvToMemory(WebApplicationBuilder builder, WebApplication app)
+{
+    var serviceScope = app.Services.CreateScope();
+    IMovieAppService? movieAppService = serviceScope.ServiceProvider.GetService<IMovieAppService>();
+
+    if (movieAppService == null)
+    {
+        Console.Write($"Service \"{typeof(IMovieAppService)}\" not found.");
+        return;
+    }
+
+    string csvFilePathFromConfiguration = builder.Configuration["CsvFilePath"];
+    var response = await movieAppService.ImportFromCsv(csvFilePathFromConfiguration);
+
+    if (response == null || !response.Success)
+        Console.WriteLine(response?.MessageError ?? "Error ocorreu ao importar os dados.");
 }

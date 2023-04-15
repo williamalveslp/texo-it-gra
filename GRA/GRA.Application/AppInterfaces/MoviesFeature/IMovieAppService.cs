@@ -1,4 +1,5 @@
 ﻿using GRA.Application.ViewModels.MoviesFeature;
+using static GRA.Infra.CrossCutting.Helpers.CsvHelper;
 
 namespace GRA.Application.AppInterfaces.MoviesFeature
 {
@@ -11,5 +12,7 @@ namespace GRA.Application.AppInterfaces.MoviesFeature
         Task<IList<MovieViewModel>> GetAllAsync();
 
         bool DeleteById(int id);
+
+        Task<CsvHelperResponse?> ImportFromCsv(string csvFilePath);
     }
 }

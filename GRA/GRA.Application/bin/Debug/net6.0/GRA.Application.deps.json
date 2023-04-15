@@ -9,7 +9,8 @@
       "GRA.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "GRA.Domain": "1.0.0"
+          "GRA.Domain": "1.0.0",
+          "GRA.Infra.CrossCutting": "1.0.0"
         },
         "runtime": {
           "GRA.Application.dll": {}
@@ -89,6 +90,11 @@
         "runtime": {
           "GRA.Domain.Core.dll": {}
         }
+      },
+      "GRA.Infra.CrossCutting/1.0.0": {
+        "runtime": {
+          "GRA.Infra.CrossCutting.dll": {}
+        }
       }
     }
   },
@@ -153,6 +159,11 @@
       "sha512": ""
     },
     "GRA.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GRA.Infra.CrossCutting/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -26,6 +26,11 @@ namespace GRA.API.Controllers.Base
             _notifications = (DomainNotificationHandler)notifications;
         }
 
+        /// <summary>
+        /// Response generics.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
         protected new IActionResult Response(object? result)
         {
             if (IsValidOperation())
@@ -71,6 +76,10 @@ namespace GRA.API.Controllers.Base
             return Ok(new Response100InformativeViewModel(HttpStatusCode.Continue));
         }
 
+        /// <summary>
+        /// Response for Invalid model.
+        /// </summary>
+        /// <returns></returns>
         protected IActionResult ResponseModelStateInvalid()
         {
             return Response(null);

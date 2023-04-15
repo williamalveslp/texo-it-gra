@@ -9,6 +9,6 @@ namespace GRA.Infra.DataStore.EntityFrameworkCore.Context
         {
         }
 
-        public DbSet<Movie> Movies { get; set; } = null!;
+        public virtual DbSet<Movie> Movies { get; set; } = null!;
     }
 }

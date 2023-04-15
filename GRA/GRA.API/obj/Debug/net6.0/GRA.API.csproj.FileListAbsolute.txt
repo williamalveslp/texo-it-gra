@@ -85,3 +85,6 @@ C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\AutoMapper.dll
 C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\GRA.Infra.CrossCutting.dll
 C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\GRA.Infra.CrossCutting.pdb
+C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\GRA.Infra.CrossCutting.Swagger.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.API\bin\Debug\net6.0\GRA.Infra.CrossCutting.Swagger.pdb

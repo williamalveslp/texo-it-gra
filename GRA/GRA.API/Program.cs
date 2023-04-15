@@ -3,6 +3,7 @@ using GRA.API.Middlewares;
 using GRA.Application.AppInterfaces.MoviesFeature;
 using GRA.Application.AutoMapper.MoviesFeature;
 using GRA.Infra.DataStore.EntityFrameworkCore.Startup;
+using GRA.Infra.CrossCutting.Swagger.Startup;
 
 try
 {
@@ -15,7 +16,8 @@ try
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
 
-    builder.Services.AddSwaggerGen();
+    // Swagger.
+    builder.Services.AddSwaggerExtension(builder.Configuration);
 
     // Register layers.
     builder.Services.RegisterGeneralLayers();
@@ -36,11 +38,14 @@ try
                       .AllowAnyHeader()
                       .AllowAnyMethod());
 
-    // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
+    if (app.Environment.IsDevelopment()) // Desenvolvimento.
     {
-        app.UseSwagger();
-        app.UseSwaggerUI();
+        // Swagger.
+        app.UseSwaggerExtension(builder.Configuration);     
+    }
+    else                                // Produção.
+    {
+        app.UseHsts();
     }
 
     // Exception Handling.
@@ -81,5 +86,5 @@ static async Task ImportMoviesFromCsvToMemory(WebApplicationBuilder builder, Web
     var response = await movieAppService.ImportFromCsv(csvFilePathFromConfiguration);
 
     if (response == null || !response.Success)
-        Console.WriteLine(response?.MessageError ?? "Error ocorreu ao importar os dados.");
+        Console.WriteLine(response?.MessageError ?? "Error to import the data from CSV file.");
 }

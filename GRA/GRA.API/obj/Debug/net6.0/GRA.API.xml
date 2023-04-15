@@ -20,6 +20,19 @@
             </summary>
             <param name="notifications"></param>
         </member>
+        <member name="M:GRA.API.Controllers.Base.ApiBaseController.Response(System.Object)">
+            <summary>
+            Response generics.
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GRA.API.Controllers.Base.ApiBaseController.ResponseModelStateInvalid">
+            <summary>
+            Response for Invalid model.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:GRA.API.Controllers.MovieController">
             <summary>
             API de Filmes.

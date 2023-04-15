@@ -7,5 +7,7 @@ namespace GRA.Application.AppInterfaces.MoviesFeature
         Task<int?> InsertAsync(RegisterMovieViewModel viewModel);
 
         Task<IList<MovieViewModel>> GetAllAsync();
+
+        bool DeleteById(int id);
     }
 }

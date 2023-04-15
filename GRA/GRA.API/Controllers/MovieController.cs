@@ -62,5 +62,22 @@ namespace GRA.API.Controllers
 
             return Response(await _movieAppService.GetAllAsync());
         }
+
+        /// <summary>
+        /// Excluí Filme por Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [ProducesResponseType(typeof(Response200ConfirmationViewModel<IList<MovieViewModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response400ClientErrorViewModel<IEnumerable<string>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Response500ServerErrorViewModel<IEnumerable<string>>), StatusCodes.Status500InternalServerError)]
+        public IActionResult DeleteById(int id)
+        {
+            if (!ModelState.IsValid)
+                return ResponseModelStateInvalid();
+
+            return Response(_movieAppService.DeleteById(id));
+        }
     }
 }

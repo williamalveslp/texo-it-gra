@@ -49,5 +49,19 @@ namespace GRA.Application.AppServices.MoviesFeature
             var movies = await _movieRepositoryReadOnly.GetAllAsync();
             return _mapper.Map<IList<Movie>, IList<MovieViewModel>>(movies);
         }
+
+        public bool DeleteById(int id)
+        {
+            var movie = _movieRepositoryReadOnly.GetById(id);
+
+            if (movie == null)
+            {
+                NotifyValidationErrors("Filme não encontrado para ser excluído.", HttpStatusCode.BadRequest);
+                return false;
+            }
+
+            _movieRepositoryWrite.Remove(id);
+            return true;
+        }
     }
 }

@@ -46,6 +46,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:GRA.API.Controllers.MovieController.DeleteById(System.Int32)">
+            <summary>
+            Excluí Filme por Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:GRA.API.IoC.Register">
             <summary>
             Register general layers.

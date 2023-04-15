@@ -6,6 +6,6 @@ namespace GRA.Application.AppInterfaces.MoviesFeature
     {
         Task<int?> InsertAsync(RegisterMovieViewModel viewModel);
 
-        Task GetAllAsync();
+        Task<IList<MovieViewModel>> GetAllAsync();
     }
 }

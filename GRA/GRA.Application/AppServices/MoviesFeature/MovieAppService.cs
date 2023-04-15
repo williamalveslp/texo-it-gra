@@ -44,9 +44,10 @@ namespace GRA.Application.AppServices.MoviesFeature
             return movie.Id;
         }
 
-        public async Task GetAllAsync()
+        public async Task<IList<MovieViewModel>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var movies = await _movieRepositoryReadOnly.GetAllAsync();
+            return _mapper.Map<IList<Movie>, IList<MovieViewModel>>(movies);
         }
     }
 }

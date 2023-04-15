@@ -52,7 +52,7 @@ namespace GRA.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(typeof(Response200ConfirmationViewModel<int?>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response200ConfirmationViewModel<IList<MovieViewModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Response400ClientErrorViewModel<IEnumerable<string>>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(Response500ServerErrorViewModel<IEnumerable<string>>), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAll()
@@ -60,7 +60,7 @@ namespace GRA.API.Controllers
             if (!ModelState.IsValid)
                 return ResponseModelStateInvalid();
 
-            return Response(_movieAppService.GetAllAsync());
+            return Response(await _movieAppService.GetAllAsync());
         }
     }
 }

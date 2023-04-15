@@ -10,7 +10,7 @@ namespace GRA.Domain.Interfaces.Repositories.Base
         Task<T?> GetByIdAsync(int entityId);
         Task<Y?> GetByIdAsync<Y>(int entityId, bool isDeleted) where Y : EntityBase;
 
-        IList<T> GetAll();
+        IQueryable<T> GetAll();
         IList<Y> GetAll<Y>(bool isDeleted) where Y : EntityBase;
 
         Task<IList<T>> GetAllAsync();

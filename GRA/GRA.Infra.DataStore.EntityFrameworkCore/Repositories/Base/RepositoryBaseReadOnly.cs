@@ -38,9 +38,9 @@ namespace GRA.Infra.DataStore.EntityFrameworkCore.Repositories.Base
                                           .FirstOrDefaultAsync();
         }
 
-        public IList<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return _context.Set<T>().AsQueryable();
         }
 
         public IList<Y> GetAll<Y>(bool isDeleted) where Y : EntityBase

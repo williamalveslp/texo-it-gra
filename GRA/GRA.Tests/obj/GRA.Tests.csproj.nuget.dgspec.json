@@ -4,14 +4,85 @@
     "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj": {
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Application\\GRA.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj",
-        "projectName": "GRA.Tests",
-        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj",
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Application\\GRA.Application.csproj",
+        "projectName": "GRA.Application",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Application\\GRA.Application.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\obj\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj"
+              },
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain.Core\\GRA.Domain.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain.Core\\GRA.Domain.Core.csproj",
+        "projectName": "GRA.Domain.Core",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain.Core\\GRA.Domain.Core.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +114,291 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj",
+        "projectName": "GRA.Domain",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain.Core\\GRA.Domain.Core.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain.Core\\GRA.Domain.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj",
+        "projectName": "GRA.Infra.CrossCutting",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\GRA.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.DataStore.EntityFrameworkCore\\GRA.Infra.DataStore.EntityFrameworkCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.DataStore.EntityFrameworkCore\\GRA.Infra.DataStore.EntityFrameworkCore.csproj",
+        "projectName": "GRA.Infra.DataStore.EntityFrameworkCore",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.DataStore.EntityFrameworkCore\\GRA.Infra.DataStore.EntityFrameworkCore.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.DataStore.EntityFrameworkCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Domain\\GRA.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj",
+        "projectName": "GRA.Tests",
+        "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\GRA.Tests.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Application\\GRA.Application.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Application\\GRA.Application.csproj"
+              },
+              "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.DataStore.EntityFrameworkCore\\GRA.Infra.DataStore.EntityFrameworkCore.csproj": {
+                "projectPath": "C:\\Projetos_Github\\texo-it-gra\\GRA\\GRA.Infra.DataStore.EntityFrameworkCore\\GRA.Infra.DataStore.EntityFrameworkCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[6.0.0, )"

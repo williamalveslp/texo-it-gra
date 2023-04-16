@@ -9,7 +9,7 @@ namespace GRA.Tests.AppService.Fixture
         public MovieFixture()
         {
             this.Configuration = new ConfigurationBuilder()
-              .AddJsonFile("AppService/Fixture/gra.appsettings.json", optional: false)
+              .AddJsonFile("AppService/gra.appsettings.json", optional: false)
               .Build();
         }
     }

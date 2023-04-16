@@ -1,4 +1,6 @@
-﻿namespace GRA.Application.ViewModels.MoviesFeature
+﻿using System.Text.Json.Serialization;
+
+namespace GRA.Application.ViewModels.MoviesFeature
 {
     public class MovieInternalAwardsViewModel
     {
@@ -15,6 +17,9 @@
             public int PreviousWin { get; set; }
 
             public int FollowingWin { get; set; }
+
+            [JsonIgnore]
+            public bool IsConsective { get; set; }
         }
     }
 }

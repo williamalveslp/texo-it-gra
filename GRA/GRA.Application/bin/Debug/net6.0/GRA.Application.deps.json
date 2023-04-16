@@ -10,7 +10,8 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "GRA.Domain": "1.0.0",
-          "GRA.Infra.CrossCutting": "1.0.0"
+          "GRA.Infra.CrossCutting": "1.0.0",
+          "NSwag.Annotations": "13.18.2"
         },
         "runtime": {
           "GRA.Application.dll": {}
@@ -69,6 +70,14 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "NSwag.Annotations/13.18.2": {
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Annotations.dll": {
+            "assemblyVersion": "13.18.2.0",
+            "fileVersion": "13.18.2.0"
           }
         }
       },
@@ -152,6 +161,13 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "NSwag.Annotations/13.18.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2zDLZXEU1PVuvdMc1k+SIkLonp8vPRHAkto6qQfCeCPqhDaF82+FOWe3TLJIYBS8IC7aV/mT+eoqJLeZvXiN4A==",
+      "path": "nswag.annotations/13.18.2",
+      "hashPath": "nswag.annotations.13.18.2.nupkg.sha512"
     },
     "GRA.Domain/1.0.0": {
       "type": "project",

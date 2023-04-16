@@ -89,51 +89,91 @@ namespace GRA.Application.AppServices.MoviesFeature
             IList<MovieProducerViewModel> movieProducerViewModels = await GetProducerByMovies();
             IList<ProducerAwardsVM> producersAwardsVM = new List<ProducerAwardsVM>();
 
-            foreach (var item in movieProducerViewModels)
+            var producersByGroup = movieProducerViewModels.GroupBy(f => f.Producer);
+
+            foreach (var producerByGroup in producersByGroup)
             {
-                ProducerAwardsVM producerAwardsVM = new ProducerAwardsVM();
-
-                var findMoviesByProducer = producersAwardsVM.Where(f => !string.IsNullOrEmpty(f.Producer)
-                                                                 && f.Producer.Equals(item.Producer, StringComparison.OrdinalIgnoreCase))
-                                                            .ToList();
-                producerAwardsVM.Producer = item.Producer;
-
-                if (!findMoviesByProducer.Any())
+                foreach (var item in producerByGroup)
                 {
-                    producerAwardsVM.PreviousWin = item.Year;
-                }
-                else
-                {
-                    foreach (var movieByProducer in findMoviesByProducer)
+                    ProducerAwardsVM producerAwardsVM = new ProducerAwardsVM();
+
+                    var findMoviesByProducer = producersAwardsVM.Where(f => !string.IsNullOrEmpty(f.Producer)
+                                                                    && f.Producer.Equals(item.Producer, StringComparison.OrdinalIgnoreCase))
+                                                               .ToList();
+                    producerAwardsVM.Producer = item.Producer;
+
+                    if (!findMoviesByProducer.Any())
                     {
-                        if (item.Year == movieByProducer.PreviousWin
-                            && movieByProducer.FollowingWin == 0)
-                        {
-                            producerAwardsVM.PreviousWin = item.Year;
-                            producerAwardsVM.FollowingWin = item.Year;
-                        }
-                        else
-                        {
-                            var itemToRemove = producersAwardsVM.FirstOrDefault(f => f == movieByProducer);
-                            if (itemToRemove != null)
-                                producersAwardsVM.Remove(itemToRemove);
+                        producerAwardsVM.PreviousWin = item.Year;
+                    }
+                    else
+                    {
+                        List<int> listOfYears = movieProducerViewModels.Where(f => f.Producer == item.Producer)
+                                                                       .Select(f => f.Year)
+                                                                       .OrderBy(f => f)
+                                                                       .ToList();
 
-                            producerAwardsVM.PreviousWin = item.Year > movieByProducer.PreviousWin ? movieByProducer.PreviousWin : item.Year;
-                            producerAwardsVM.FollowingWin = item.Year > movieByProducer.PreviousWin ? item.Year : movieByProducer.PreviousWin;
-                        }
-
+                        producerAwardsVM.IsConsective = IsConsective(listOfYears);
+                        producerAwardsVM.PreviousWin = listOfYears.Min();
+                        producerAwardsVM.FollowingWin = listOfYears.Max();
                         producerAwardsVM.Interval = producerAwardsVM.FollowingWin - producerAwardsVM.PreviousWin;
                     }
-                }
 
-                producersAwardsVM.Add(producerAwardsVM);
+                    var itemToRemove = producersAwardsVM.FirstOrDefault(f => f.Producer.Equals(item.Producer, StringComparison.OrdinalIgnoreCase));
+                    if (itemToRemove != null)
+                    {
+                        producersAwardsVM.Remove(itemToRemove);
+                        producersAwardsVM.Add(producerAwardsVM);
+                        break;
+                    }
+
+                    producersAwardsVM.Add(producerAwardsVM);
+                }
+            }
+
+            List<ProducerAwardsVM> itemsToRemove = new List<ProducerAwardsVM>();
+
+            foreach (var item in producersAwardsVM)
+            {
+                if (item.FollowingWin <= 0)
+                    itemsToRemove.Add(item);
+            }
+
+            foreach (var item in itemsToRemove)
+            {
+                producersAwardsVM.Remove(item);
             }
 
             MovieInternalAwardsViewModel result = new MovieInternalAwardsViewModel();
-            result.Min = producersAwardsVM.Where(f => f.Interval > 0).OrderBy(f => f.Interval).Take(2);
-            result.Max = producersAwardsVM.Where(f => f.Interval > 0).OrderByDescending(f => f.Interval).Take(2);
+            result.Min = producersAwardsVM.OrderBy(f => f.Interval).ThenBy(f => f.PreviousWin).Where(f => f.Interval > 0).Take(2);
+            result.Max = producersAwardsVM.OrderByDescending(f => f.Interval).Take(2);
 
             return result;
+        }
+
+
+        private static bool IsConsective(List<int> listNumbers)
+        {
+            if (listNumbers.Count == 1)
+                return false;
+
+            bool isConsective = true;
+
+            for (int i = 0; i < listNumbers.Count; i++)
+            {
+                int nextIndex = i + 1;
+
+                if (nextIndex >= listNumbers.Count)
+                    break;
+
+                if (!listNumbers.Contains(listNumbers[i] + 1))
+                {
+                    isConsective = false;
+                    break;
+                }
+            }
+
+            return isConsective;
         }
 
         public async Task<CsvHelperResponse?> ImportFromCsv(string csvFilePath)
@@ -201,7 +241,7 @@ namespace GRA.Application.AppServices.MoviesFeature
             var moviesByYear = allMovies.Where(f => f.IsWinner == true)
                                         .GroupBy(f => f.Year);
 
-            IList<MovieProducerViewModel> movieProducerViewModels = new List<MovieProducerViewModel>();
+            HashSet<MovieProducerViewModel> movieProducerViewModels = new HashSet<MovieProducerViewModel>();
 
             foreach (IGrouping<int, Movie> movieItem in moviesByYear)
             {
@@ -258,7 +298,10 @@ namespace GRA.Application.AppServices.MoviesFeature
                                 Title = item.Title
                             };
 
-                            if (!movieProducerViewModels.Contains(movieProducerViewModel))
+                            var checkIfExists = movieProducerViewModels.Where(f => f.Title == movieProducerViewModel.Title
+                                                                                 && f.Year == movieProducerViewModel.Year
+                                                                                 && f.Producer == movieProducerViewModel.Producer);
+                            if (!checkIfExists.Any())
                             {
                                 movieProducerViewModels.Add(movieProducerViewModel);
                             }
@@ -267,7 +310,7 @@ namespace GRA.Application.AppServices.MoviesFeature
                 }
             }
 
-            return movieProducerViewModels;
+            return movieProducerViewModels.OrderBy(f => f.Year).ToList();
         }
     }
 }

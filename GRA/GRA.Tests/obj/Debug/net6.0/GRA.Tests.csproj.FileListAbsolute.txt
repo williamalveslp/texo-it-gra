@@ -97,3 +97,12 @@ C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\obj\Debug\net6.0\refint\GRA.Tests.d
 C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\obj\Debug\net6.0\GRA.Tests.pdb
 C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\obj\Debug\net6.0\GRA.Tests.genruntimeconfig.cache
 C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\obj\Debug\net6.0\ref\GRA.Tests.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\AppService\gra.appsettings.json
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Projetos_Github\texo-it-gra\GRA\GRA.Tests\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

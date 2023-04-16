@@ -9,42 +9,34 @@ using GRA.Domain.Interfaces.Repositories.Write;
 using GRA.Infra.DataStore.EntityFrameworkCore.Context;
 using GRA.Infra.DataStore.EntityFrameworkCore.Repositories.ReadOnly.MoviesFeature;
 using GRA.Infra.DataStore.EntityFrameworkCore.Repositories.Write.MoviesFeature;
-using GRA.Tests.AppService.Fixture;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace GRA.Tests.AppService
 {
-    public class MovieAppServiceTest : IClassFixture<MovieFixture>
+    public class MovieAppServiceTest
     {
         private readonly IMovieAppService _movieAppService;
         private readonly DatabaseContext _context;
 
-        private IConfiguration Configuration { get; }
-
-        public MovieAppServiceTest(MovieFixture fixture)
+        public MovieAppServiceTest()
         {
-            this.Configuration = fixture.Configuration;
-
             var options = new DbContextOptionsBuilder<DatabaseContext>()
                 .UseInMemoryDatabase(databaseName: "myDatabase")
                 .Options;
 
             _context = new DatabaseContext(options);
 
-            // Configura a injeção de dependência
             var services = new ServiceCollection();
             services.AddScoped<IMovieRepositoryReadOnly, MovieRepositoryReadOnly>();
             services.AddScoped<IMovieRepositoryWrite, MovieRepositoryWrite>();
             services.AddScoped<IMovieAppService, MovieAppService>();
-            services.AddScoped<DatabaseContext>(_ => _context);
+            services.AddScoped(_ => _context);
 
             services.AddMediatR(x => x.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
-            // Domain - Events
             services.AddScoped<INotificationHandler<DomainNotificationRequest>, DomainNotificationHandler>();
 
             services.AddAutoMapper(typeof(MovieMapping));

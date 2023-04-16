@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Text;
 
 namespace GRA.Infra.CrossCutting.Helpers
 {
@@ -18,30 +19,34 @@ namespace GRA.Infra.CrossCutting.Helpers
 
             DataTable dataTable = new DataTable();
 
+            IEnumerable<string> allContextRead = File.ReadLines(csvFilePath, encoding: Encoding.UTF8);
+
+            if (allContextRead == null)
+                return new CsvHelperResponse($"Não foi informações de leitura no arquivo \"{csvFilePath}\".");
+            
             // Read first line as Header.
-            string[]? columnNames = File.ReadLines(csvFilePath)?.First()?.Split(';');
+            string[]? columnNames = allContextRead?.First()?.Split(';');
 
             if (columnNames == null)
                 return new CsvHelperResponse("Leitura da primeira linha como coluna, está inválida.");
 
-            foreach (string columnName in columnNames)            
-                dataTable.Columns.Add(columnName.Trim());            
+            foreach (string columnName in columnNames)
+                dataTable.Columns.Add(columnName.Trim());
 
             // Read the lines as Content.
-            string[] lines = File.ReadAllLines(csvFilePath);
+            string[] lines = allContextRead!.ToArray();
 
             for (int i = 1; i < lines.Length; i++)
             {
                 string[]? fields = lines[i]?.Split(';');
-
                 if (fields == null)
                     continue;
 
                 DataRow row = dataTable.NewRow();
 
-                for (int j = 0; j < fields?.Length; j++)
+                for (int j = 0; j < fields.Length; j++)
                     row[j] = fields[j].Trim();
-                
+
                 dataTable.Rows.Add(row);
             }
 

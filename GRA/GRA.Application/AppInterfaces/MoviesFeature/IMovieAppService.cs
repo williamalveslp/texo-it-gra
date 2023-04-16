@@ -11,8 +11,12 @@ namespace GRA.Application.AppInterfaces.MoviesFeature
 
         Task<IList<MovieViewModel>> GetAllAsync();
 
+        Task<MovieViewModel> GetByIdAsync(int id);
+
         bool DeleteById(int id);
 
         Task<CsvHelperResponse?> ImportFromCsv(string csvFilePath);
+
+        Task<MovieInternalAwardsViewModel> GetIntervalBestAwards();
     }
 }

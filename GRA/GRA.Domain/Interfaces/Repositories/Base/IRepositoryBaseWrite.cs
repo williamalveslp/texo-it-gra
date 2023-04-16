@@ -7,7 +7,7 @@
 
         T InsertSave(T entity);
         Task<T> InsertSaveAsync(T entity);
-        Task<IEnumerable<T>> InsertSaveInLoteAsync(IEnumerable<T> entities);
+        Task<IEnumerable<T>> InsertSaveInBatchAsync(IEnumerable<T> entities);
 
         T UpdateSave(T entity);
         Task<T> UpdateSaveAsync(T entity);

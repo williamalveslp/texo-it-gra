@@ -82,11 +82,47 @@ namespace GRA.API.Controllers
         }
 
         /// <summary>
+        /// Buscar filme por Id.
+        /// </summary>
+        /// <param name="id">Id do filme.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType(typeof(MovieViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response400ClientErrorViewModel<IEnumerable<string>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Response500ServerErrorViewModel<IEnumerable<string>>), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetById(int id)
+        {
+            if (!ModelState.IsValid)
+                return ResponseModelStateInvalid();
+
+            return Response(await _movieAppService.GetByIdAsync(id));
+        }
+
+        /// <summary>
+        /// Intervalo de prêmios.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetBestAwards")]
+        [ProducesResponseType(typeof(MovieInternalAwardsViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response400ClientErrorViewModel<IEnumerable<string>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Response500ServerErrorViewModel<IEnumerable<string>>), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetBestAwards()
+        {
+            if (!ModelState.IsValid)
+                return ResponseModelStateInvalid();
+
+            return Ok(await _movieAppService.GetIntervalBestAwards());
+        }
+
+        /// <summary>
         /// Excluí Filme por Id.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Id do filme.</param>
         /// <returns></returns>
         [HttpDelete]
+        [Route("{id}")]
         [ProducesResponseType(typeof(Response200ConfirmationViewModel<IList<MovieViewModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Response400ClientErrorViewModel<IEnumerable<string>>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(Response500ServerErrorViewModel<IEnumerable<string>>), StatusCodes.Status500InternalServerError)]

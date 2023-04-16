@@ -66,11 +66,24 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:GRA.API.Controllers.MovieController.GetById(System.Int32)">
+            <summary>
+            Buscar filme por Id.
+            </summary>
+            <param name="id">Id do filme.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GRA.API.Controllers.MovieController.GetBestAwards">
+            <summary>
+            Intervalo de prêmios.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:GRA.API.Controllers.MovieController.DeleteById(System.Int32)">
             <summary>
             Excluí Filme por Id.
             </summary>
-            <param name="id"></param>
+            <param name="id">Id do filme.</param>
             <returns></returns>
         </member>
         <member name="T:GRA.API.IoC.Register">
